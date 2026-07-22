@@ -1,0 +1,67 @@
+# =============================================================================
+# COUCAL CLOCK — unit configuration
+# นาฬิกานกกระปูด — ไฟล์ตั้งค่าประจำเครื่อง
+#
+# This is the ONLY file that differs between the two clocks.
+# Copy it to unit-01.toml / unit-02.toml and edit.
+#
+# -----------------------------------------------------------------------------
+# ABBOT-ADJUSTABLE SETTINGS  ·  ตั้งค่าได้โดยไม่ต้องใช้ช่าง
+# The fields in the [abbot] section below are safe to change by hand.
+# Everything under them is set once at installation by the technician.
+# -----------------------------------------------------------------------------
+
+[abbot]
+# --- Silence windows · ช่วงเวลาเงียบ (ห้ามมีเสียงนก) --------------------------
+# The clock will make NO sound during these times. Chanting hours go here.
+# Set these together with the abbot. 24-hour clock, temple local time.
+# กำหนดเวลาที่ห้ามนกร้อง (เช่น เวลาสวดมนต์)
+silence_windows = [
+    { start = "04:30", end = "06:30", note = "ทำวัตรเช้า / morning chanting" },
+    { start = "17:00", end = "19:00", note = "ทำวัตรเย็น / evening chanting" },
+]
+
+# --- Audio · เสียง -----------------------------------------------------------
+audio_enabled = true            # false = ปิดเสียงทั้งหมด (turn off all sound)
+volume_day = 0.55               # 0.0–1.0, daytime
+volume_night = 0.30             # 0.0–1.0, after dusk
+wan_phra_distinct = true        # different coucal behavior on wan phra (holy days)
+
+# --- Coucal calls · การร้องของนก ---------------------------------------------
+call_at_dawn = true             # ร้องตอนรุ่งสาง (civil dawn — drifts through the year)
+call_at_dusk = true             # ร้องตอนพลบค่ำ (civil dusk)
+
+
+# -----------------------------------------------------------------------------
+# INSTALLATION SETTINGS  ·  ตั้งค่าโดยช่างตอนติดตั้ง (do not change casually)
+# -----------------------------------------------------------------------------
+
+[unit]
+id = "COUCAL-00"                # unique per clock, e.g. COUCAL-01 / COUCAL-02
+label = "ตัวอย่าง / example"
+
+[location]
+# Temple position. Captured by GPS at install; verify against a map.
+latitude = 18.8500             # +north
+longitude = 99.0500            # +east
+elevation_m = 320.0            # metres above sea level
+timezone = "Asia/Bangkok"      # ICT, UTC+7, no DST
+true_heading_deg = 0.0         # direction the compass face's "up" points (true north = 0)
+                               # magnetic declination is computed from bundled IGRF-13
+
+[power]
+mode = "duty_cycled"           # "duty_cycled" (default) or "always_on" (bench work)
+wake_interval_min = 5          # minutes between display updates when duty-cycled
+target_wh_per_day = 4.0        # power budget the steward enforces
+# Load-shedding thresholds (battery volts, LiFePO4 ~12.8 V nominal):
+shed_to_hourly_v = 12.6        # below this: drop to 1 update/hour
+shed_to_dateonly_v = 12.2      # below this: date-only face
+hibernate_v = 12.0             # below this: render "sleeping" face and power down
+holdover_warn_days = 30        # show time-confidence glyph after this long without GPS
+
+[methods]
+# Canonical method per tradition where schools disagree. Named on the face in small type.
+ayanamsa = "lahiri"            # vedic sidereal zero-point
+hexagram_school = "plum_blossom"   # 梅花易數 time-based, deterministic
+thai_intercalation = "eade"   # cross-checked against bundled authority table (table wins)
+crescent_criterion = "yallop"  # Babylonian first-crescent visibility

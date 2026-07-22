@@ -1,0 +1,25 @@
+# WORKSTATION dependencies — for running the simulator and tests on a Mac/Linux desktop.
+#
+# This is deliberately SEPARATE from the device pins in pyproject.toml.
+#   * pyproject.toml pins the exact versions that ship on the clock (Python 3.11,
+#     Raspberry Pi OS). Those are the posterity pins; they are validated by the
+#     Phase 5 image build and `make offline-install` against vendor/wheels/.
+#   * This file pins what actually works on a current desktop Python (3.13 here).
+#     Older device pins (e.g. Pillow 10.4.0) have no wheels for 3.13 and would try
+#     to compile from source.
+#
+# Versions below are the exact set verified working on macOS 15 / Python 3.13.14,
+# with the full test suite and golden fixtures passing.
+
+# Rendering
+pillow==12.3.0
+
+# Astronomy — Skyfield is MIT, deliberately not pyswisseph (AGPL/fee).
+skyfield==1.54
+numpy==2.5.1
+jplephem==2.24
+
+# Test and lint
+pytest==9.1.1
+hypothesis==6.157.0
+ruff==0.15.22

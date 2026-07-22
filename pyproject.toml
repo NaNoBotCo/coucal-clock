@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coucal-clock"
+version = "0.0.0"
+description = "Ceremonial multi-tradition e-ink almanac clock for a wat in San Sai, Chiang Mai. Runs unattended, offline, for decades."
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+readme = "README.md"
+
+# Dependencies are PINNED for posterity. Exact hashes live in requirements.lock.
+# Nothing here reaches the network at runtime — these are build/compute libraries.
+dependencies = [
+    "numpy==1.26.4",       # Skyfield's numeric core
+    "skyfield==1.49",      # astronomy engine (MIT). NOT pyswisseph (AGPL/fee).
+    "jplephem==2.21",      # reads the bundled DE440 .bsp
+    "Pillow==10.4.0",      # framebuffer + FreeType Thai/Latin/symbol text
+]
+
+[project.optional-dependencies]
+# Development / CI only. NEVER installed on the device.
+dev = [
+    "pytest==8.3.2",
+    "pytest-cov==5.0.0",
+    "ruff==0.6.2",
+    "hypothesis==6.111.1", # property tests across calendar rollovers
+]
+
+[project.scripts]
+coucal-sim = "coucal.sim.__main__:main"
+coucal = "coucal.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+markers = [
+    "golden: validates a module against a published authoritative value",
+    "property: exercises calendar rollovers and boundaries",
+]

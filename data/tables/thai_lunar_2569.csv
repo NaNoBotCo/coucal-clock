@@ -1,0 +1,67 @@
+# Thai lunisolar calendar anchors for พ.ศ. 2569 (2026 CE).
+#
+# SOURCE: Thai PBS, "ปฏิทินวันพระ 2569 วันธรรมสวนะ ครบทั้ง 12 เดือน"
+#         https://www.thaipbs.or.th/now/content/3498   retrieved 2026-07-20
+#
+# This is the AUTHORITY table. Per the design brief, where a computed algorithm and the
+# official Thai calendar disagree about intercalation, the table wins and the divergence
+# is logged — because wan phra is when people actually come to the temple.
+#
+# 2569 is an adhikamasa year (อธิกมาส): the eighth month is doubled, written 8b below
+# (เดือน ๘ สอง). Asalha Bucha falls on ขึ้น ๑๕ ค่ำ เดือน ๘ สอง, and Khao Phansa —
+# the start of Vassa — on แรม ๑ ค่ำ the following day.
+#
+# Each row fixes the lunar designation of one Gregorian date. Days between anchors are
+# derived by counting, and every anchor is re-checked against that derivation in tests.
+#
+# date,phase,day,month
+2026-01-03,waxing,15,2
+2026-01-11,waning,8,2
+2026-01-18,waning,15,2
+2026-01-26,waxing,8,3
+2026-02-02,waxing,15,3
+2026-02-10,waning,8,3
+2026-02-16,waning,14,3
+2026-02-24,waxing,8,4
+2026-03-03,waxing,15,4
+2026-03-11,waning,8,4
+2026-03-18,waning,15,4
+2026-03-26,waxing,8,5
+2026-04-02,waxing,15,5
+2026-04-10,waning,8,5
+2026-04-16,waning,14,5
+2026-04-24,waxing,8,6
+2026-05-01,waxing,15,6
+2026-05-09,waning,8,6
+2026-05-16,waning,15,6
+2026-05-24,waxing,8,7
+2026-05-31,waxing,15,7
+2026-06-08,waning,8,7
+2026-06-14,waning,14,7
+2026-06-22,waxing,8,8
+2026-06-29,waxing,15,8
+2026-07-07,waning,8,8
+2026-07-14,waning,15,8
+2026-07-22,waxing,8,8b
+2026-07-29,waxing,15,8b
+2026-07-30,waning,1,8b
+2026-08-06,waning,8,8b
+2026-08-13,waning,15,8b
+2026-08-21,waxing,8,9
+2026-08-28,waxing,15,9
+2026-09-05,waning,8,9
+2026-09-11,waning,14,9
+2026-09-19,waxing,8,10
+2026-09-26,waxing,15,10
+2026-10-04,waning,8,10
+2026-10-11,waning,15,10
+2026-10-19,waxing,8,11
+2026-10-26,waxing,15,11
+2026-11-03,waning,8,11
+2026-11-09,waning,14,11
+2026-11-17,waxing,8,12
+2026-11-24,waxing,15,12
+2026-12-02,waning,8,12
+2026-12-09,waning,15,12
+2026-12-17,waxing,8,1
+2026-12-24,waxing,15,1

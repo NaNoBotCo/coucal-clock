@@ -1,0 +1,31 @@
+{
+  "module": "solar_lunar",
+  "description": "Sun and moon over the temple at San Sai, Chiang Mai — 2026-07-20",
+  "source": "US Naval Observatory, Astronomical Applications Dept., API rstt/oneday; coords 18.85,99.05 tz=+7; https://aa.usno.navy.mil/api/rstt/oneday?date=2026-07-20&coords=18.85,99.05&tz=7",
+  "retrieved": "2026-07-20",
+  "method": {
+    "horizon": "standard -0.8333 deg (upper limb + refraction), as published almanacs use",
+    "twilight": "civil = -6 deg solar depression",
+    "note": "Observer elevation is recorded but the horizon convention is the standard sea-level one, so these match published tables rather than the true mountain horizon."
+  },
+  "inputs": { "date": "2026-07-20", "lat": 18.85, "lon": 99.05, "elev_m": 320, "tz": "Asia/Bangkok" },
+  "expected": {
+    "civil_dawn_local": "05:33",
+    "sunrise_local": "05:57",
+    "solar_noon_local": "12:30",
+    "sunset_local": "19:03",
+    "civil_dusk_local": "19:27",
+    "moonrise_local": "11:25",
+    "moonset_local": "23:18",
+    "moon_phase_name": "Waxing Crescent"
+  },
+  "tolerance": {
+    "civil_dawn_local": "120s",
+    "sunrise_local": "120s",
+    "solar_noon_local": "120s",
+    "sunset_local": "120s",
+    "civil_dusk_local": "120s",
+    "moonrise_local": "180s",
+    "moonset_local": "180s"
+  }
+}

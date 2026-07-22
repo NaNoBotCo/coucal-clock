@@ -1,0 +1,40 @@
+# COUCAL CLOCK — Unit 02.  Identical software to Unit 01; only this file differs.
+# See config/unit.example.toml for full documentation of every field.
+
+[abbot]
+silence_windows = [
+    { start = "04:30", end = "06:30", note = "ทำวัตรเช้า / morning chanting" },
+    { start = "17:00", end = "19:00", note = "ทำวัตรเย็น / evening chanting" },
+]
+audio_enabled = true
+volume_day = 0.55
+volume_night = 0.30
+wan_phra_distinct = true
+call_at_dawn = true
+call_at_dusk = true
+
+[unit]
+id = "COUCAL-02"
+label = "ศาลา / sala"
+
+[location]
+latitude = 18.8500
+longitude = 99.0500
+elevation_m = 320.0
+timezone = "Asia/Bangkok"
+true_heading_deg = 0.0
+
+[power]
+mode = "duty_cycled"
+wake_interval_min = 5
+target_wh_per_day = 4.0
+shed_to_hourly_v = 12.6
+shed_to_dateonly_v = 12.2
+hibernate_v = 12.0
+holdover_warn_days = 30
+
+[methods]
+ayanamsa = "lahiri"
+hexagram_school = "plum_blossom"
+thai_intercalation = "eade"
+crescent_criterion = "yallop"
