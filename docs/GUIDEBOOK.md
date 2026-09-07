@@ -187,7 +187,7 @@ No dates, no owners. Complete at every stage. Ordered roughly by awe-per-effort.
 
 Not more features. The clock is awesome when:
 
-- **It is still.** No flicker, no glow, no twitch. Refreshes are budgeted; silence is sacrosanct.
+- **It is still.** No flicker, no glow, no twitch. Refreshes are budgeted.
 - **It is honest.** Every claim traceable to sky, table, or measured file — and every
   limit spoken in the reader's own words.
 - **It is local.** Lanna first: the reckoning of the wat it hangs in, corroborated by
