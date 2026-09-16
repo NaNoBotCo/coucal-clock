@@ -93,10 +93,21 @@ def test_lanna_animal_agrees_with_the_central_thai_cycle():
         assert thai_name == animal_year(probe), f"{probe}: {lanna_name}/{thai_name} mismatch"
 
 
+def test_animal_years_match_real_world_anchors():
+    """Pin the cycle to known years, not just internal consistency — both modules
+    once agreed with each other while both were a year off. 2020 was rat, 2025 snake,
+    2026 (after Songkran) horse."""
+    assert animal_year(date(2020, 7, 1)) == "ชวด"  # rat
+    assert animal_year(date(2025, 7, 1)) == "มะเส็ง"  # snake
+    assert animal_year(date(2026, 7, 1)) == "มะเมีย"  # horse
+    assert lanna_animal(date(2026, 7, 1)) == ("สะง้า", "มะเมีย", "horse")
+
+
 def test_animal_turns_at_songkran_not_new_year():
-    before = lanna_animal(date(2026, 1, 1))[0]
-    after = lanna_animal(date(2026, 7, 1))[0]
-    assert before != after
+    """January 2026 is still the snake year in the Northern reckoning; the horse
+    arrives with Songkran."""
+    assert lanna_animal(date(2026, 1, 1)) == ("ไส้", "มะเส็ง", "snake")
+    assert lanna_animal(date(2026, 7, 1)) == ("สะง้า", "มะเมีย", "horse")
 
 
 # --- festivals -------------------------------------------------------------

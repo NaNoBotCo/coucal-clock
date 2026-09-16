@@ -122,7 +122,7 @@ def animal_year(day: date) -> str:
     new year, not 1 January. Flagged rather than hidden — refining it belongs with the
     full algorithm.
     """
-    return THAI_ANIMALS[(day.year + 543 + 4) % 12]
+    return THAI_ANIMALS[(day.year + 543 + 5) % 12]
 
 
 @dataclass(frozen=True)

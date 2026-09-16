@@ -103,7 +103,7 @@ def _animal_index(day: date) -> int:
     line up with :func:`coucal.almanac.thai.animal_year`. 2026 is ปีสะง้า / ปีมะเมีย.
     """
     year = day.year if (day.month, day.day) >= (SONGKRAN_MONTH, SONGKRAN_DAY) else day.year - 1
-    return (year + 543 + 4) % 12
+    return (year + 543 + 5) % 12
 
 
 def lanna_animal(day: date) -> tuple[str, str, str]:
