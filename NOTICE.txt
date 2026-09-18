@@ -19,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Bundled third-party data and their own licenses live under data/ (Noto fonts:
+SIL Open Font License; JPL DE440s ephemeris: NASA/JPL public data). See each
+subdirectory's LICENSE note. Astronomy uses Skyfield (MIT), deliberately not
+Swiss Ephemeris (AGPL/commercial).
+
+---
+
+The verbatim text of the licence named above is in LICENSE beside this file.
+The layers on this page are the terms; LICENSE carries the wording a machine
+matches against.
