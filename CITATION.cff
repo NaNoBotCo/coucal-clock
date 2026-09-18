@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it as below."
+title: "Coucal Clock"
+abstract: "An e-ink clock: Lanna calendar face, direction and almanac complications."
+type: software
+authors:
+  - name: "NaN"
+    website: "https://github.com/NaNoBotCo"
+repository-code: "https://github.com/NaNoBotCo/coucal-clock"
+license:
+  - MIT
+date-released: "2026-09-18"
